@@ -1,5 +1,16 @@
 Rails.application.routes.draw do
+  # 参赛评委
   devise_for :judges
+
+  # 比赛说明页面
+  root 'home#index'
+
+  # 参赛老师
+  resources :players
+
+  # 评分
+  resources :grades, only: [:new, :create]
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
