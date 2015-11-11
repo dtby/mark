@@ -1,84 +1,63 @@
 <div id="wrapper">
-  <nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
-      <ul class="nav metismenu" id="side-menu">
-
-        <div class="dropdown profile-element"> <span>
-          <img alt="image" class="img-circle" src="img/profile_small.jpg" />
-           </span>
-          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">后台管理系统</strong></span>
-          </a>
-        </div>
-
-        <li class="nav-header">
-          <div class="logo-element">
-            DTBY+
-          </div>
-        </li>
-        <li class="active">
-          <a href="＃"><i class="fa fa-th-large"></i> <span class="nav-label">评委信息</span></a>
-        </li>
-        <li>
-          <a href="＃"><i class="fa fa-diamond"></i> <span class="nav-label">参赛选手信息</span></a>
-        </li>
-        <li>
-          <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">管理员信息</span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
+  <%= render 'admin/share/left_nav'%>
   <div id="page-wrapper" class="gray-bg">
-    <div class="row border-bottom">
-      <nav class="navbar navbar-static-top  " role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-          <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-          <form role="search" class="navbar-form-custom" action="search_results.html">
-            <div class="form-group">
-              <input type="text" placeholder="Search for something..." class="form-control" name="top-search" id="top-search">
-            </div>
-          </form>
-        </div>
-        <ul class="nav navbar-top-links navbar-right">
-          <li>
-            <a href="＃">
-              <i class="fa fa-sign-out"></i>退出
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="row wrapper border-bottom white-bg page-heading">
-      <div class="col-sm-8">
-        <h2>2015上海市高等职业院校教师教学信息化说课比赛</h2>
-        <ol class="breadcrumb">
-          <li>
-            <a href="＃">This is</a>
-          </li>
-          <li class="active">
-            <strong>Breadcrumb</strong>
-          </li>
-        </ol>
-      </div>
-    </div>
-
+    <%= render 'admin/share/header'%>
     <div class="wrapper wrapper-content">
-      <div class="middle-box text-center animated fadeInRightBig">
-        <h3 class="font-bold">This is page content</h3>
-        <div class="error-desc">
-          You can create here any grid layout you want. And any variation layout you imagine:) Check out
-          main dashboard and other site. It use many different layout.
-          <br/><a href="index.html" class="btn btn-primary m-t">Dashboard</a>
+      <div class="lg-box animated fadeInRightBig">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+              <div class="ibox-title">
+                <h5>评委信息表</h5>
+                <div class="pull-right">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                  <span class="glyphicon glyphicon-plus ace_plus" aria-hidden="true"></span><span class="ace_plus_word">添加评委</span>
+                  </a>
+                </div>
+              </div>
+              <div class="ibox-content">
+                <table class="table">
+                  <thead>
+                    <tr class="text-center">
+                      <th>序号</th>
+                      <th>邮箱</th>
+                      <th>姓名</th>
+                      <th>学校</th>
+                      <th>编辑</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @judges.each_with_index do |judge, index| %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= judge.email %></td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>
+                        <%#= link_to edit_admin_customer_member_path(id: member.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
+                          <span class="glyphicon glyphicon-edit"></span>
+                        
+                        <%#= link_to [:admin, member.customer, member], method: :delete, class: 'btn btn-xs btn-danger' do %>
+                          <span class="glyphicon glyphicon-trash"></span>
+                        
+                      </td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="text-center" colspan="6">
+                        <ul class="pagination"></ul>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div>
-        <strong>Copyright</strong> 大唐邦彦（上海）信息技术有限公司 &copy; 11－11－2015
-      </div>
-    </div>
-
+    <%= render 'admin/share/footer'%>
   </div>
-    </div>
+</div>
