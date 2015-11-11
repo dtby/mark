@@ -1,17 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  target: 
-  content: 
-  plan: 
-  express: 
+  target: 1
+  content: 1
+  plan: 1
+  express: 1
   judge_id: 
   player_id: 
 
 two:
-  target: 
-  content: 
-  plan: 
-  express: 
+  target: 1
+  content: 1
+  plan: 1
+  express: 1
   judge_id: 
   player_id: 

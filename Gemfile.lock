@@ -37,12 +37,18 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.3)
+<<<<<<< HEAD
 <<<<<<< 7900dcbf5be3c4800fc41a04a26eabe6484ceb20
 =======
     autoprefixer-rails (6.0.3)
       execjs
       json
 >>>>>>> add routes
+=======
+    autoprefixer-rails (6.0.3)
+      execjs
+      json
+>>>>>>> change grade
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
