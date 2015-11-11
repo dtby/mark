@@ -11,7 +11,6 @@
  * file per style scope.
  *
  *= require_self
- *= require ./admin
  *= require_tree ./application/.
  */
 @import "bootstrap-sprockets";
