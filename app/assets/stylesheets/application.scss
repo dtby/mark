@@ -16,3 +16,36 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "variables";
+
+body{
+	background-color: $body-bg;
+}
+
+.wrap{
+	padding: 0 40px 40px;
+	.mbtn{
+		background-color: $dark-purple;
+		border: 2px solid $purple;
+		border-radius: 3px;
+		color: $white;
+		letter-spacing: 3px;
+		width: 100%;
+	}
+	//文字颜色
+	.dark-purple{
+		color: $dark-purple;
+	}
+	.turn-back{
+		width: 100%;
+		line-height: 30px;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		a{
+			text-decoration: underline;
+			color: #333;
+			font-size: 16px;
+		}
+	}
+}

@@ -15,4 +15,6 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree ./frame/.
+//= require_tree ./admin/.
+//= require_tree ./plugin/.
 
