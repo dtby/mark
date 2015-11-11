@@ -11,6 +11,13 @@ Rails.application.routes.draw do
   # 评分
   resources :grades, only: [:new, :create]
 
+  # 后台管理界面
+  namespace :admin do
+    resources :judges
+    resources :admin
+    resources :players
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
