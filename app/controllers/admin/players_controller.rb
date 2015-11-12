@@ -17,7 +17,7 @@ module Admin
       @player = Player.new(player_params)
       if @player.save
         flash[:notice] = "评委创建成功"
-        redirect_with @players
+        respond_with @players
       end
         flash[:error] = "创建失败"
         render :new
@@ -46,7 +46,7 @@ module Admin
       end
 
       def player_params
-        params.require(:player).permit(:name, :title)
+        params.require(:player).permit(:number, :name, :title)
       end
   end
 end

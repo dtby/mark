@@ -18,7 +18,7 @@ module Admin
       @judge = Judge.new(judge_params)
       if @judge.save
         flash[:notice] = "评委创建成功"
-        redirect_to admin_judges_path
+        respond_with @judges
       end
         flash[:error] = "创建失败"
         render :new

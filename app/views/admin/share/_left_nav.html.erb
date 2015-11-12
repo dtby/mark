@@ -11,8 +11,8 @@
           <i class="fa fa-diamond"></i> <span class="nav-label">参赛选手信息</span>
         <% end %>
       </li>
-      <li class="<%= "active" if params[:controller] == "admin/admin" %>">
-      <%= link_to admin_admin_index_path do |i| %>
+      <li class="<%= "active" if params[:controller] == "admin/administrators" %>">
+      <%= link_to admin_administrators_path do |i| %>
         <i class="fa fa-bar-chart-o"></i> <span class="nav-label">管理员信息</span>
       <% end %>
       </li>

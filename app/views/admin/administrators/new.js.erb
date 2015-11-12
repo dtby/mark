@@ -1,0 +1,3 @@
+$(".modal-backdrop").remove();
+$("#administratorModalContent").html("<%= escape_javascript( render "administrators_modal", administrator: @administrator  )%>");
+$('#administratorModal').modal('show');

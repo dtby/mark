@@ -49,7 +49,9 @@
                 <dd class="error text-danger"><%= judge.errors[:password_confirmation][0] %></dd>
               <% end %>
             </div>
-            <div class="text-center"><button class="btn sub-btn btn-primary" type="submit" data: { disable_with: '正在提交...' } ><strong>提交</strong></button></div>
+            <div class="text-center">
+              <%= f.submit "提交", class: "btn sub-btn btn-primary", data: { disable_with: '正在提交...' } %>
+            </div>
             <% end %>
           </div>
         </div>

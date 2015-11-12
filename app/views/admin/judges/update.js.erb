@@ -1,0 +1,7 @@
+<% if @judge.errors.present? %>
+  $(".modal-backdrop").remove();
+  $("#judgeModalContent").html("<%= escape_javascript( render "judges_modal", judge: @judge )%>");
+  $('#judgeModal').modal('show');
+<% else %>
+  location.href = "<%= admin_judges_path %>"
+<% end  %>

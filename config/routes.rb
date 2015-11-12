@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :administrators
+  #后台管理员
+
   # 参赛评委
   devise_for :judges
 
@@ -11,13 +14,6 @@ Rails.application.routes.draw do
   # 评分
   resources :grades, only: [:new, :create]
 
-  # 后台管理界面
-  namespace :admin do
-    resources :judges
-    resources :admin
-    resources :players
-  end
-
   #后台管理
   namespace :admin do
     concern :gradetable do
@@ -25,6 +21,7 @@ Rails.application.routes.draw do
     end
     resources :judges, concerns: :gradetable
     resources :players, concerns: :gradetable
+    resources :administrators
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,7 @@
+<% if @administrator.errors.present? %>
+  $(".modal-backdrop").remove();
+  $("#administratorModalContent").html("<%= escape_javascript( render "administrators_modal", administrator: @administrator )%>");
+  $('#administratorModal').modal('show');
+<% else %>
+  location.href = "<%= admin_administrators_path %>"
+<% end  %>
