@@ -19,9 +19,8 @@
                 <table class="table">
                   <thead>
                     <tr class="text-center">
-                      <th>序号</th>
+                      <th>排序</th>
                       <th>邮箱</th>
-                      <th>密码</th>
                       <th>编辑</th>
                     </tr>
                   </thead>
@@ -30,7 +29,6 @@
                     <tr>
                       <td><%= index + 1 %></td>
                       <td><%= administrator.email %></td>
-                      <td><%= administrator.password %></td>
                       <td>
                         <%= link_to edit_admin_administrator_path(id: administrator.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
                           <span class="glyphicon glyphicon-edit"></span>

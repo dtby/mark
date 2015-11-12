@@ -46,7 +46,7 @@ module Admin
       end
 
       def player_params
-        params.require(:player).permit(:number, :name, :title)
+        params.require(:player).permit(:number, :name, :title, :college)
       end
   end
 end

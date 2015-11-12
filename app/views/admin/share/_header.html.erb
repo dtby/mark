@@ -5,9 +5,15 @@
     </div>
     <ul class="nav navbar-top-links navbar-right">
       <li>
-        <a href="＃">
-          <i class="fa fa-sign-out"></i>退出
-        </a>
+        <% if current_administrator %>
+          <%= link_to destroy_administrator_session_path, :method => :delete do |i| %>
+            <i class="fa fa-sign-out"></i>退出
+          <% end %>
+        <% else %>
+          <%= link_to new_administrator_session_path, :method => :delete do |i| %>
+            <i class="fa fa-sign-out"></i>登录
+          <% end %>
+        <% end %>
       </li>
     </ul>
   </nav>

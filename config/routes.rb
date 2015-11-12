@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   #后台管理
   namespace :admin do
+    root 'administrators#index'
     concern :gradetable do
       resources :grades
     end

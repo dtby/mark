@@ -25,6 +25,14 @@
                 <dd class="error text-danger"><%= player.errors[:name][0] %></dd>
               <% end %>
             </div>
+             <div class="form-group">
+              <div class="input-group input-padding" style="width: 100%;">
+                <%= f.text_field :college, class: 'form-control', placeholder: '院校'%>
+              </div>
+              <% if player.errors[:college].any? %>
+                <dd class="error text-danger"><%= player.errors[:college][0] %></dd>
+              <% end %>
+            </div>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
                 <%= f.text_field :title, class: 'form-control', placeholder: '说课名称'%>

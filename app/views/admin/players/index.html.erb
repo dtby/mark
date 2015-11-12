@@ -20,8 +20,8 @@
                   <thead>
                     <tr class="text-center">
                       <th>序号</th>
-                      <th>编号</th>
                       <th>姓名</th>
+                      <th>院校</th>
                       <th>说课名称</th>
                       <th>编辑</th>
                     </tr>
@@ -29,9 +29,9 @@
                   <tbody>
                   <% @players.each_with_index do |player, index| %>
                     <tr>
-                      <td><%= index + 1 %></td>
                       <td><%= player.number %></td>
                       <td><%= player.name %></td>
+                      <td><%= player.college %></td>
                       <td><%= player.title %></td>
                       <td>
                         <%= link_to edit_admin_player_path(id: player.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
