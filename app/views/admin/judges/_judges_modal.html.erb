@@ -13,41 +13,41 @@
               <div class="input-group input-padding" style="width: 100%;">
                 <%= f.text_field :name, class: 'form-control', placeholder: '姓名'%>
               </div>
-             <!--  <% if judge.errors[:name].any? %>
+              <% if judge.errors[:name].any? %>
                 <dd class="error text-danger"><%= judge.errors[:name][0] %></dd>
-              <% end %> -->
+              <% end %>
             </div>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
                 <%= f.text_field :email, class: 'form-control', placeholder: '邮箱'%>
               </div>
-             <!--  <% if judge.errors[:email].any? %>
+              <% if judge.errors[:email].any? %>
                 <dd class="error text-danger"><%= judge.errors[:email][0] %></dd>
-              <% end %> -->
+              <% end %>
             </div>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
                 <%= f.text_field :phone, class: 'form-control', onkeyup:"KeyP(this);", placeholder: '手机'%>
               </div>
-            <!--   <% if judge.errors[:phone].any? %>
+              <% if judge.errors[:phone].any? %>
                 <dd class="error text-danger"><%= judge.errors[:phone][0] %></dd>
-              <% end %> -->
+              <% end %>
             </div>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
-                <%= f.text_field :password, id: 'txt', class: 'form-control', placeholder: '默认密码'%>
+                <%= f.text_field :password, class: 'form-control txt', placeholder: '默认密码'%>
               </div>
-            <!--   <% if judge.errors[:password].any? %>
+              <% if judge.errors[:password].any? %>
                 <dd class="error text-danger"><%= judge.errors[:password][0] %></dd>
-              <% end %> -->
+              <% end %>
             </div>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
-                <%= f.text_field :password_confirmation, id: 'txt', class: 'form-control', placeholder: '默认密码'%>
+                <%= f.text_field :password_confirmation, class: 'form-control txt', placeholder: '默认密码'%>
               </div>
-            <!--   <% if judge.errors[:password_confirmation].any? %>
+              <% if judge.errors[:password_confirmation].any? %>
                 <dd class="error text-danger"><%= judge.errors[:password_confirmation][0] %></dd>
-              <% end %> -->
+              <% end %>
             </div>
             <div class="text-center"><button class="btn sub-btn btn-primary" type="submit" data: { disable_with: '正在提交...' } ><strong>提交</strong></button></div>
             <% end %>
@@ -58,7 +58,7 @@
   </div>
 </div>
 <script>
-    function KeyP(v){
-        document.getElementById("txt").value = v.value;
-    }
+  function KeyP(v){
+    document.getElementsByClassName("txt").value = v.value;
+  }
 </script>
