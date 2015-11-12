@@ -17,13 +17,19 @@
 		font-weight: bold;
 		.btn-player{
 			border: none;
-			background-color: $red;
 			border-radius: 6px;
 			padding: 1px 10px;
 		}
+		.btn-judge{
+			@extend .btn-player;
+			background-color: $red;
+		}
+		.btn-show{
+			@extend .btn-player;
+			background-color: $purple;
+		}
 	}
 	.table > thead{
-		color: $dark-purple;
 		font-size: 18px;
 	}
 }

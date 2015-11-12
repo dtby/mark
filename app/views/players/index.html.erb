@@ -4,12 +4,12 @@
 
 <%= render partial: "share/banner" %>
 
-<div class="welcome-title">刘某某老师，您好！</div>
+<div class="welcome-title"><strong><%= current_judge.name %>老师，您好！</strong></div>
 <div class="wrap">
 	<div class="players">
 		<table class="table">
 			<thead>
-				<tr>
+				<tr class="dark-purple">
 					<th>序号</th>
 					<th>姓名</th>
 					<th>说课名称</th>
@@ -24,17 +24,23 @@
 					<td><%= player.name %></td>
 					<td>《<%= player.title %>》</td>
 					<td>
-						<%= link_to "点评", "#", class: "btn btn-danger btn-xs btn-player" %>
+						<% if is_judged(player, current_judge) %>
+							<a href="javascript:void(0)" class = "btn btn-danger btn-xs btn-show" data-toggle="modal" data-target="#myModal">查看</a>
+						<% else %>
+							<%= link_to "点评", new_grade_path(player_id: player.id), class: "btn btn-danger btn-xs btn-judge" %>
+						<% end %>
 					</td>
 				</tr>
 				<% end %>
 			</tbody>	
 		</table>
 	</div>
-	<!-- 返回上一页 -->
-	<%= render partial: "share/turn_back" %>
 </div>
 
+<!-- 返回上一页 -->
+<%= render partial: "share/turn_back" %>
+
+<%= render partial: "share/modal" %>
 <script>
 	// window.onload = function(){
 	// 	var img = $(".banner").height();

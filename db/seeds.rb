@@ -5,4 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Judge.create!(id: 1, name:'DTBY', phone: '13800000000', email: 'judge@mark.com', password: '000000', password_confirmation: '000000')
+Judge.destroy_all
+Judge.create!(id: 1, phone: '13800000000', name: '陈', email: 'judge@mark.com', password: '000000', password_confirmation: '000000')
+
+Player.destroy_all
+Player.create!(id: 1, name: '陈某某', title: '我的说课名称')

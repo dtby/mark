@@ -1,0 +1,44 @@
+<% content_for :title do %>
+  评分标准
+<% end %>
+
+<%= render partial: "share/banner" %>
+
+<div class="wrap">
+	<div class="grades">
+		<%= form_for @grade do |f| %>
+			<%= f.hidden_field :judge_id, value: current_judge.id %>
+			<%= f.hidden_field :player_id, value: params[:player_id] %>
+	    <div class="grade-range">
+	    	<p>课程定位目标（总分10分）<span class="pull-right" id="target">7分</span></p>
+	      <%= f.range_field :target, min: '0', max: '10', step: '1', value: '0' %>
+	    </div>
+
+	    <div class="grade-range">
+	    	<p>课程内容（总分18分）<span class="pull-right" id="content">17分</span></p>
+	      <%= f.range_field :content, min: '0', max: '18', step: '1', value: '0' %>
+	    </div>
+
+	    <div class="grade-range">
+	    <p>课程教学设计（总分60分）<span class="pull-right" id="plan">55分</span></p>
+	    <%= f.range_field :plan, min: '0', max: '60', step: '1', value: '0' %>
+	    </div>
+
+	    <div class="grade-range">
+	    	<p>表达与教态（总分12分）<span class="pull-right" id="express">10分</span></p>
+	    	<%= f.range_field :express, min: '0', max: '12', step: '1', value: '0' %>
+	    </div>
+
+	    <div class="grade-range">
+	    	<p>总分（总分100分）<span class="pull-right" id="total">89分</span></p>
+	    </div>
+
+	    <div class="actions">
+	      <%= f.submit "提交评分", class: "mbtn", data: { disable_with: '正在提交...' } %>
+	    </div>
+	  <% end %> 
+	</div>
+</div>
+
+<!-- 返回上一页 -->
+<%= render partial: "share/turn_back" %>

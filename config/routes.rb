@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :players
 
   # 评分
-  resources :grades, only: [:new]
+  resources :grades, only: [:new, :create]
 
   # 后台管理界面
   namespace :admin do

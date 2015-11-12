@@ -1,0 +1,21 @@
+@import "variables";
+.grades{
+	padding: 15px 20px 0;
+	.grade-range{
+		padding-bottom: 20px;
+		p{
+			margin-bottom: 0;
+		}
+		::-webkit-slider-runnable-track {
+			border: 1px solid $range-border;
+			background-color: $white;
+		}
+		::-ms-fill-lower { background: orange; }
+		::-ms-fill-upper { background: green; }
+		::-ms-thumb { background: red; }
+		::-ms-ticks-before { display: block; color: black; }
+		::-ms-ticks-after { display: block; color: blue; }
+		::-ms-track { padding: 5px; }
+		::-ms-tooltip { display: none; }
+	}
+}
