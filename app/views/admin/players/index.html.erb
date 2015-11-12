@@ -8,10 +8,10 @@
           <div class="col-lg-12">
             <div class="ibox float-e-margins">
               <div class="ibox-title">
-                <h5>评委信息表</h5>
+                <h5>参赛选手信息表</h5>
                 <div class="pull-right">
-                  <%= link_to new_admin_judge_path, remote: true, format: :js, class: "ibox-title-new member-new" do %>
-                    <i class="fa fa-plus fa-lg"></i>添加评委
+                  <%= link_to new_admin_player_path, remote: true, format: :js, class: "ibox-title-new member-new" do %>
+                    <i class="fa fa-plus fa-lg"></i>添加参赛者
                   <% end %>
                 </div>
               </div>
@@ -21,23 +21,21 @@
                     <tr class="text-center">
                       <th>序号</th>
                       <th>姓名</th>
-                      <th>邮箱</th>
-                      <th>手机</th>
+                      <th>说课名称</th>
                       <th>编辑</th>
                     </tr>
                   </thead>
                   <tbody>
-                  <% @judges.each_with_index do |judge, index| %>
+                  <% @players.each_with_index do |player, index| %>
                     <tr>
                       <td><%= index + 1 %></td>
-                      <td><%= judge.name %></td>
-                      <td><%= judge.email %></td>
-                      <td><%= judge.phone %></td>
+                      <td><%= player.name %></td>
+                      <td><%= player.title %></td>
                       <td>
-                        <%= link_to edit_admin_judge_path(id: judge.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
+                        <%= link_to edit_admin_player_path(id: player.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
                           <span class="glyphicon glyphicon-edit"></span>
                         <% end %>
-                        <%= link_to admin_judge_path(id: judge.id), method: :delete, class: 'btn btn-xs btn-danger' do %>
+                        <%= link_to admin_player_path(id: player.id), method: :delete, class: 'btn btn-xs btn-danger' do %>
                           <span class="glyphicon glyphicon-trash"></span>
                         <% end %>
                       </td>
@@ -61,4 +59,4 @@
     <%= render 'admin/share/footer'%>
   </div>
 </div>
-<div id="judgeModalContent"></div>
+<div id="playerModalContent"></div>

@@ -22,10 +22,20 @@
     <h2>2015上海市高等职业院校教师教学信息化说课比赛</h2>
     <ol class="breadcrumb">
       <li>
-        <a href="＃">This is</a>
+        <a>This is</a>
       </li>
       <li class="active">
-        <strong>Breadcrumb</strong>
+        <strong>
+          <% if params[:controller] == "admin/players" %>
+            参赛选手信息
+          <% end %>
+          <% if params[:controller] == "admin/judges" %>
+            评委信息
+          <% end %> 
+          <% if params[:controller] == "admin/admin" %>
+            管理员信息   
+          <% end %>  
+        </strong>
       </li>
     </ol>
   </div>

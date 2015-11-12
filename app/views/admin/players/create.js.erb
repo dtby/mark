@@ -1,0 +1,7 @@
+<% if @player.errors.present? %>
+  $(".modal-backdrop").remove();
+  $("#playerModalContent").html("<%= escape_javascript( render "players_modal", player: @player )%>");
+  $('#playerModal').modal('show');
+<% else %>
+  location.href = "<%= admin_players_path %>"
+<% end  %>

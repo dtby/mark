@@ -12,15 +12,16 @@ module Admin
 
     def new
       @judge = Judge.new
-      respond_with @judge
     end
 
     def create
-      @judge = Judge.new judge_params
+      @judge = Judge.new(judge_params)
       if @judge.save
         flash[:notice] = "评委创建成功"
+        redirect_to admin_judges_path
       end
-      respond_with @judge
+        flash[:error] = "创建失败"
+        render :new
     end
 
     def edit
@@ -28,14 +29,17 @@ module Admin
     end
 
     def update
-      if @judge.update judge_params
-        flash[:notice] = "评委更新成功"
+      if @judge.update(judge_params)
+        flash[:notice] = "更新成功"
+        redirect_to admin_judges_path
+      else
+        flash[:error] = "更新失败"
       end
-      respond_with @judge
     end
 
     def destroy
-      respond_with @judge.destroy
+      @judge.destroy
+      redirect_to admin_judges_path
     end
 
     private
@@ -44,7 +48,7 @@ module Admin
       end
 
       def judge_params
-        params.require(:judge).permit(:name, :phone, :email)
+        params.require(:judge).permit(:name, :phone, :email, :password ,:password_confirmation)
       end
   end
 end

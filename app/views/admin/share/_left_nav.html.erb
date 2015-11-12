@@ -1,14 +1,20 @@
 <nav class="navbar-default navbar-static-side" role="navigation">
   <div class="sidebar-collapse">
     <ul class="nav metismenu" id="side-menu">
-      <li class="active">
-        <a href="＃"><i class="fa fa-th-large"></i> <span class="nav-label">评委信息</span></a>
+      <li class="<%= "active" if params[:controller] == "admin/judges" %>">
+      <%= link_to admin_judges_path do |i| %>
+        <i class="fa fa-th-large"></i> <span class="nav-label">评委信息</span>
+      <% end %>  
       </li>
-      <li>
-        <a href="＃"><i class="fa fa-diamond"></i> <span class="nav-label">参赛选手信息</span></a>
+      <li class="<%= "active" if params[:controller] == "admin/players" %>">
+        <%= link_to admin_players_path do |i| %>
+          <i class="fa fa-diamond"></i> <span class="nav-label">参赛选手信息</span>
+        <% end %>
       </li>
-      <li>
-        <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">管理员信息</span></a>
+      <li class="<%= "active" if params[:controller] == "admin/admin" %>">
+      <%= link_to admin_admin_index_path do |i| %>
+        <i class="fa fa-bar-chart-o"></i> <span class="nav-label">管理员信息</span>
+      <% end %>
       </li>
     </ul>
   </div>
