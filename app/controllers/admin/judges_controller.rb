@@ -1,24 +1,24 @@
 module Admin
   class JudgesController < Admin::BaseController
-
+    before_action :set_judge, only: [:show, :edit, :update, :destroy]
+    respond_to :html, :js
     def index
       @judges = Judge.all
     end
 
     def show
-      respond_with judge.find(params[:id])
+      respond_with Judge.find(params[:id])
     end
 
     def new
-      @judge = judge.new
+      @judge = Judge.new
       respond_with @judge
     end
 
     def create
-      @judge = judge.new judge_params
+      @judge = Judge.new judge_params
       if @judge.save
         flash[:notice] = "评委创建成功"
-        Userjudge.create(user_id: current_user.id, judge_id: @judge.id, role: 1, invite: true)
       end
       respond_with @judge
     end
@@ -39,8 +39,12 @@ module Admin
     end
 
     private
+      def set_judge
+        @judge = Judge.find(params[:id])
+      end
+
       def judge_params
-        params.require(:judge).permit(:email)
+        params.require(:judge).permit(:name, :phone, :email)
       end
   end
 end

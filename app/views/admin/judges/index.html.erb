@@ -10,9 +10,9 @@
               <div class="ibox-title">
                 <h5>评委信息表</h5>
                 <div class="pull-right">
-                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                  <span class="glyphicon glyphicon-plus ace_plus" aria-hidden="true"></span><span class="ace_plus_word">添加评委</span>
-                  </a>
+                  <%= link_to new_admin_judge_path, remote: true, format: :js, class: "ibox-title-new member-new" do %>
+                    <i class="fa fa-plus fa-lg"></i>添加评委
+                  <% end %>
                 </div>
               </div>
               <div class="ibox-content">
@@ -20,9 +20,9 @@
                   <thead>
                     <tr class="text-center">
                       <th>序号</th>
-                      <th>邮箱</th>
                       <th>姓名</th>
-                      <th>学校</th>
+                      <th>学院／学校</th>
+                      <th>手机</th>
                       <th>编辑</th>
                     </tr>
                   </thead>
@@ -34,12 +34,12 @@
                       <td>Otto</td>
                       <td>@mdo</td>
                       <td>
-                        <%#= link_to edit_admin_customer_member_path(id: member.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
+                        <%= link_to edit_admin_judge_path(id: judge.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
                           <span class="glyphicon glyphicon-edit"></span>
-                        
-                        <%#= link_to [:admin, member.customer, member], method: :delete, class: 'btn btn-xs btn-danger' do %>
+                        <% end %>
+                        <%= link_to admin_judge_path, method: :delete, class: 'btn btn-xs btn-danger' do %>
                           <span class="glyphicon glyphicon-trash"></span>
-                        
+                        <% end %>
                       </td>
                     </tr>
                   <% end %>
@@ -61,3 +61,4 @@
     <%= render 'admin/share/footer'%>
   </div>
 </div>
+<div id="judgeModalContent"></div>
