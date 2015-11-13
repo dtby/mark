@@ -1,4 +1,5 @@
 class GradesController < BaseController
+	respond_to :html, :js
 	
 	def new
 		@grade = Grade.new
@@ -11,6 +12,15 @@ class GradesController < BaseController
 			return redirect_to players_path
 		else
 			render new
+		end
+	end
+
+	def show
+		@title = params[:title]
+		respond_to do |format|
+			format.js {
+				format.js
+			}
 		end
 	end
 
