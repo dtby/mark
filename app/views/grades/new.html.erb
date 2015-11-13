@@ -14,9 +14,9 @@
 	    		<%= link_to(image_tag("tips.png", width: 16), grade_path(id: 1, title: 'target'), remote: true, format: :js) %>
 	    		课程定位目标 
 	    		<span class="dark-purple">（总分10分）</span>
-	    		<span class="pull-right" id="target">7分</span>
+	    		<span class="pull-right" id="target">0分</span>
 	    	</p>
-	      <%= f.range_field :target, min: '0', max: '10', step: '1', value: '0' %>
+	      <%= f.range_field :target, min: '0', max: '10', step: '0.5', value: '0', id: 'target_input', onChange:'onChangeSum()' %>
 	    </div>
 
 	    <div class="grade-range">
@@ -24,9 +24,9 @@
 	    		<%= link_to(image_tag("tips.png", width: 16), grade_path(id: 1, title: 'content'), remote: true, format: :js) %>	
 	    		课程内容 
 	    		<span class="dark-purple">（总分18分）</span>
-	    		<span class="pull-right" id="content">17分</span>
+	    		<span class="pull-right" id="content">0分</span>
 	    	</p>
-	      <%= f.range_field :content, min: '0', max: '18', step: '1', value: '0' %>
+	      <%= f.range_field :content, min: '0', max: '18', step: '0.5', value: '0', id: 'content_input', onChange:'onChangeSum()' %>
 	    </div>
 
 	    <div class="grade-range">
@@ -34,9 +34,9 @@
 	    	<%= link_to(image_tag("tips.png", width: 16), grade_path(id: 1, title: 'plan'), remote: true, format: :js) %>	
 	    	课程教学设计 
 	    	<span class="dark-purple">（总分60分）</span>
-	    	<span class="pull-right" id="plan">55分</span>
+	    	<span class="pull-right" id="plan">0分</span>
 	    </p>
-	    <%= f.range_field :plan, min: '0', max: '60', step: '1', value: '0' %>
+	    <%= f.range_field :plan, min: '0', max: '60', step: '0.5', value: '0', id: 'plan_input', onChange:'onChangeSum()' %>
 	    </div>
 
 	    <div class="grade-range">
@@ -44,13 +44,13 @@
 	    		<%= link_to(image_tag("tips.png", width: 16), grade_path(id: 1, title: 'express'), remote: true, format: :js) %>	
 	    		表达与教态
 	    		<span class="dark-purple">（总分12分）</span>
-	    		<span class="pull-right" id="express">10分</span>
+	    		<span class="pull-right" id="express">0分</span>
 	    	</p>
-	    	<%= f.range_field :express, min: '0', max: '12', step: '1', value: '0' %>
+	    	<%= f.range_field :express, min: '0', max: '12', step: '0.5', value: '0', id: 'express_input', onChange:'onChangeSum()' %>
 	    </div>
 
 	    <div class="grade-range">
-	    	<p>总分<span class="dark-purple">（总分100分）</span><span class="pull-right" id="total">89分</span></p>
+	    	<p>总分<span class="dark-purple">（总分100分）</span><span class="pull-right" id="total">0分</span></p>
 	    </div>
 
 	    <div class="actions">
@@ -67,3 +67,33 @@
 <%= render partial: "grade_modal" %>
 
 <div class="grade-new"></div>
+
+<script>
+	$(function(){  
+		$('#target_input').bind('input propertychange', function() {  
+		  $('#target').html($(this).val()+ '分');
+		});
+		$('#content_input').bind('input propertychange', function() {  
+		  $('#content').html($(this).val()+ '分');
+		});
+		$('#plan_input').bind('input propertychange', function() {  
+		  $('#plan').html($(this).val()+ '分');
+		});
+		$('#express_input').bind('input propertychange', function() {  
+		  $('#express').html($(this).val()+ '分');
+		});
+	});
+
+	function onChangeSum(){
+    var a = document.getElementById("target_input").value;
+		var b = document.getElementById("content_input").value;
+		var c = document.getElementById("plan_input").value;
+		var d = document.getElementById("express_input").value;
+		var e = parseFloat(a)+parseFloat(b)+parseFloat(c)+parseFloat(d);
+		$("#total").text(e+'分');
+		$("#grade_modal .red").text(e);
+		// $('#total').html($('#plan_input').val()+ '分');
+		// document.getElementById("total").value = parseInt(a)+parseInt(b)+parseInt(c);
+	};
+</script>
+>>>>>>> add js

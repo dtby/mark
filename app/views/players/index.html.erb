@@ -20,7 +20,7 @@
 				<% index = 0 %>
 				<% @players.each do |player| %>
 				<tr>
-					<td><%= index += 1 %></td>
+					<td><%= player.number %></td>
 					<td><%= player.name %></td>
 					<td>《<%= player.title %>》</td>
 					<td>
