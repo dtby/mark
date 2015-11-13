@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151112142231) do
+ActiveRecord::Schema.define(version: 20151113004939) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20151112142231) do
     t.integer  "player_id",  limit: 4
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.integer  "total",      limit: 4
   end
 
   add_index "grades", ["judge_id"], name: "index_grades_on_judge_id", using: :btree
