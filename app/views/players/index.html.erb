@@ -25,7 +25,7 @@
 					<td>《<%= player.title %>》</td>
 					<td>
 						<% if is_judged(player, current_judge) %>
-							<a href="javascript:void(0)" class = "btn btn-danger btn-xs btn-show" data-toggle="modal" data-target="#myModal">查看</a>
+						<%= link_to "查看", player, remote: true, format: :js, class: "btn btn-danger btn-xs btn-show" %>
 						<% else %>
 							<%= link_to "点评", new_grade_path(player_id: player.id), class: "btn btn-danger btn-xs btn-judge" %>
 						<% end %>
@@ -40,7 +40,8 @@
 <!-- 返回上一页 -->
 <%= render partial: "share/turn_back" %>
 
-<%= render partial: "share/modal" %>
+<!-- 模态框显示老师成绩 -->
+<div class="player-grade"></div>
 <script>
 	// window.onload = function(){
 	// 	var img = $(".banner").height();

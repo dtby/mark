@@ -1,0 +1,3 @@
+$(".player-grade").html("<%= escape_javascript(render partial: "share/modal") %>");
+$(".modal-content").html("<%= escape_javascript(render partial: "modal_content", locals: { player: @player}) %>");
+$(".my-modal").modal('show');
