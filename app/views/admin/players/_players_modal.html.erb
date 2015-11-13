@@ -41,6 +41,14 @@
                 <dd class="error text-danger"><%= player.errors[:title][0] %></dd>
               <% end %>
             </div>
+            <div class="form-group">
+              <div class="input-group input-padding" style="width: 100%;">
+                <%= f.text_field :phone, class: 'form-control', placeholder: '联系电话'%>
+              </div>
+              <% if player.errors[:phone].any? %>
+                <dd class="error text-danger"><%= player.errors[:phone][0] %></dd>
+              <% end %>
+            </div>
             <div class="text-center">
               <%= f.submit "提交", class: "btn sub-btn btn-primary", data: { disable_with: '正在提交...' } %>
             </div>

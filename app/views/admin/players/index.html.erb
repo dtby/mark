@@ -23,6 +23,11 @@
                       <th>姓名</th>
                       <th>院校</th>
                       <th>说课名称</th>
+                      <th>联系方式</th>
+                      <th>最高分</th>
+                      <th>最低分</th>
+                      <th>平均分</th>
+                      <th>参评人数</th>
                       <th>编辑</th>
                     </tr>
                   </thead>
@@ -33,7 +38,15 @@
                       <td><%= player.name %></td>
                       <td><%= player.college %></td>
                       <td><%= player.title %></td>
+                      <td><%= player.phone %></td>
+                      <td><%= %></td>
+                      <td><%= %></td>
+                      <td><%= %></td>
+                      <td><%= %></td>
                       <td>
+                        <%= link_to admin_player_path(id: player.id), class: 'btn btn-xs btn-info', remote: true, format: :js do %>
+                          <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                        <% end %>
                         <%= link_to edit_admin_player_path(id: player.id), class: 'btn btn-xs btn-default', remote: true, format: :js do %>
                           <span class="glyphicon glyphicon-edit"></span>
                         <% end %>
@@ -52,6 +65,7 @@
                     </tr>
                   </tfoot>
                 </table>
+                <%#= link_to("导出为Excel", admin_players_path(format: 'xls'), class: "btn btn-success") %>
               </div>
             </div>
           </div>

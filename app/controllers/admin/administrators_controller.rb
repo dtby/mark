@@ -31,6 +31,7 @@ module Admin
     def update
       if @administrator.update(administrator_params)
         flash[:notice] = "更新成功"
+        respond_with @administrators
       else
         flash[:error] = "更新失败"
       end

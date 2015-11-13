@@ -10,8 +10,7 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
-ActiveRecord::Schema.define(version: 20151113004939) do
+ActiveRecord::Schema.define(version: 20151113031717) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -73,6 +72,7 @@ ActiveRecord::Schema.define(version: 20151113004939) do
     t.datetime "updated_at",             null: false
     t.string   "number",     limit: 255
     t.string   "college",    limit: 255
+    t.string   "phone",      limit: 255
   end
 
   add_foreign_key "grades", "judges"

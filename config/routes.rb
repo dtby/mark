@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  # 后台管理员
-  devise_for :administrators
+
+  #后台管理员
+  devise_for :administrators, controllers: { sessions: "administrators/sessions" }
 
   # 参赛评委
   devise_for :judges

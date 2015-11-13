@@ -32,7 +32,7 @@ module Admin
     def update
       if @judge.update(judge_params)
         flash[:notice] = "更新成功"
-        redirect_to admin_judges_path
+        respond_with @judges
       else
         flash[:error] = "更新失败"
       end

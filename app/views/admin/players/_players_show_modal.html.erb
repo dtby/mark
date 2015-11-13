@@ -1,0 +1,47 @@
+<div id="playerModal" class="modal fade rooms-modal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title"><span class="text-primary"><%#= player.name %></span>得分详情</h3>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table">
+                  <thead>
+                    <tr class="text-center">
+                      <th>序号</th>
+                      <th>评委</th>
+                      <th>定位目标</th>
+                      <th>课程内容</th>
+                      <th>教学设计</th>
+                      <th>表达与教态</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <% @players.each_with_index do |player, index| %>
+                    <tr>
+                      <td><%= index + 1 %></td>
+                      <td><%= player.name %></td>
+                      <td>20分</td>
+                      <td>26分</td>
+                      <td>40分</td>
+                      <td>10分</td>
+                    </tr>
+                  <% end %>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td class="text-center" colspan="6">
+                        <ul class="pagination"></ul>
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
