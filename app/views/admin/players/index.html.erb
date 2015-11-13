@@ -39,10 +39,34 @@
                       <td><%= player.college %></td>
                       <td><%= player.title %></td>
                       <td><%= player.phone %></td>
-                      <td><%= %></td>
-                      <td><%= %></td>
-                      <td><%= %></td>
-                      <td><%= %></td>
+                      <td>
+                        <% if player.grades.any? %>
+                          <%= player.grades.maximum(:total) %>分
+                        <% else %>
+                          0分
+                        <% end %>  
+                      </td>
+                      <td>
+                        <% if player.grades.any? %>
+                          <%= player.grades.minimum(:total) %>分
+                        <% else %>
+                          0分
+                        <% end %> 
+                      </td>
+                      <td>
+                        <% if player.grades.any? %>
+                          <%= player.grades.sum(:total).to_i / player.grades.count %>分
+                        <% else %>
+                          0分
+                        <% end %> 
+                      </td>
+                      <td>
+                        <% if player.grades.any? %>
+                          <%= player.grades.count %>人
+                        <% else %>
+                          0人
+                        <% end %> 
+                      </td>
                       <td>
                         <%= link_to admin_player_path(id: player.id), class: 'btn btn-xs btn-info', remote: true, format: :js do %>
                           <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
