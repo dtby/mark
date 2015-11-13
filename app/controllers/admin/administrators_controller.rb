@@ -18,9 +18,10 @@ module Admin
       if @administrator.save
         flash[:notice] = "评委创建成功"
         respond_with @administrators
-      end
+      else
         flash[:error] = "创建失败"
         render :new
+      end
     end
 
     def edit
