@@ -2,6 +2,7 @@ class Grade < ActiveRecord::Base
   belongs_to :judge
   belongs_to :player
 
+  # 计算每次评分的四项总分
   def self.grade_total params
   	cache = params.except(:player_id, :judge_id).values.map { |x| x.to_i }
   	return cache.sum

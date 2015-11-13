@@ -6,7 +6,7 @@ class GradesController < BaseController
 
 	def create
 		@grade = Grade.new(grade_params)
-		@grade[:total] = Grade.grade_total(grade_params)
+		@grade.total = Grade.grade_total(grade_params)
 		if @grade.save
 			return redirect_to players_path
 		else

@@ -5,9 +5,9 @@
 <!-- modal内容 -->
 <div class="modal-body" id="player_modal_body">
 	<div class="player-grade">
-		<h4>最高评分：<%= %>分</h4>
-		<h4>最低评分：<%= %>分</h4>
-		<h4>平均评分：<%= %>分</h4>
+		<h4>最高评分：<%= player.grades.maximum(:total) %>分</h4>
+		<h4>最低评分：<%= player.grades.minimum(:total) %>分</h4>
+		<h4>平均评分：<%= player.grades.sum(:total).to_i / player.grades.count %>分</h4>
 		<h4>评分人数：<%= player.grades.count %>人</h4>
 	</div>
 </div>
