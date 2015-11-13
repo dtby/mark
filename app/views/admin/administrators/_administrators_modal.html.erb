@@ -11,7 +11,7 @@
             <%= form_for [:admin, administrator], remote: true, format: :js do |f| %>
             <div class="form-group">
               <div class="input-group input-padding" style="width: 100%;">
-                <%= f.text_field :email, class: 'form-control', placeholder: '姓名'%>
+                <%= f.text_field :email, class: 'form-control', placeholder: '邮箱'%>
               </div>
               <% if administrator.errors[:email].any? %>
                 <dd class="error text-danger"><%= administrator.errors[:email][0] %></dd>
