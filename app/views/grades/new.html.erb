@@ -18,7 +18,6 @@
 	    	</p>
 	      <%= f.range_field :target, min: '0', max: '10', step: '0.5', value: '0', id: 'target_input', onChange:'onChangeSum()' %>
 	    </div>
-
 	    <div class="grade-range">
 	    	<p>
 	    		<%= link_to(image_tag("tips.png", width: 16), grade_path(id: 1, title: 'content'), remote: true, format: :js) %>	

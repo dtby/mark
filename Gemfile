@@ -35,6 +35,7 @@ gem 'unicorn'
 gem 'bootstrap-sass', '~> 3.3.5'
 
 gem "kaminari"
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
