@@ -54,7 +54,8 @@
 	    </div>
 
 	    <div class="actions">
-	      <%= f.submit "提交评分", class: "mbtn", data: { disable_with: '正在提交...' } %>
+	      <%#= f.submit "提交评分", class: "mbtn", data: { disable_with: '正在提交...' } %>
+	      <a href="javascript: void(0);" class="mbtn" data-toggle="modal" data-target="#grade_modal">提交评分</a>
 	    </div>
 	  <% end %> 
 	</div>
@@ -62,5 +63,7 @@
 
 <!-- 返回上一页 -->
 <%= render partial: "share/turn_back" %>
+
+<%= render partial: "grade_modal" %>
 
 <div class="grade-new"></div>

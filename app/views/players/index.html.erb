@@ -25,7 +25,7 @@
 					<td>《<%= player.title %>》</td>
 					<td>
 						<% if is_judged(player, current_judge) %>
-						<%= link_to "查看", player, remote: true, format: :js, class: "btn btn-danger btn-xs btn-show" %>
+						<%= link_to "查看", player, remote: true, format: :js, class: "btn btn-primary btn-xs btn-show" %>
 						<% else %>
 							<%= link_to "点评", new_grade_path(player_id: player.id), class: "btn btn-danger btn-xs btn-judge" %>
 						<% end %>
