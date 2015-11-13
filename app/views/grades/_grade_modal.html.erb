@@ -7,7 +7,7 @@
 				<div class="text-justify clearfix" style="padding-left: 20px; padding-right: 15px;">
 					<h4 style="line-height: 26px;">提交后则无法修改说课比赛评分，本次评分为<span class="red">90</span>分，是否确认提交？</h4>
 					<h4>
-						<%= link_to "确定","#" ,class: "btn btn-primary btn-ensure pull-left" %>
+						<buttom onclick="formSubmit()" class="btn btn-primary btn-ensure pull-left">确定</buttom>
 						<button type="button" class="btn btn-default btn-cancel pull-right" data-dismiss="modal">取消</button>
 					</h4>
 				</div>
@@ -15,3 +15,9 @@
     </div>
   </div>
 </div>
+
+<script>
+	function formSubmit(){
+		$("#new_grade").submit();
+	}
+</script>
