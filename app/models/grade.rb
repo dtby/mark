@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: grades
+#
+#  id         :integer          not null, primary key
+#  target     :integer
+#  content    :integer
+#  plan       :integer
+#  express    :integer
+#  judge_id   :integer
+#  player_id  :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  total      :integer
+#
+
 class Grade < ActiveRecord::Base
   belongs_to :judge
   belongs_to :player
