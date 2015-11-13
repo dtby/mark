@@ -55,7 +55,7 @@
                       </td>
                       <td>
                         <% if player.grades.any? %>
-                          <%= player.grades.sum(:total).to_i / player.grades.count %>分
+                          <%= player.grades.sum(:total).to_f / player.grades.count.round(1)%>分
                         <% else %>
                           0分
                         <% end %> 
