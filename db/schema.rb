@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151113031717) do
+ActiveRecord::Schema.define(version: 20151113110108) do
 
   create_table "administrators", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -32,15 +32,15 @@ ActiveRecord::Schema.define(version: 20151113031717) do
   add_index "administrators", ["reset_password_token"], name: "index_administrators_on_reset_password_token", unique: true, using: :btree
 
   create_table "grades", force: :cascade do |t|
-    t.integer  "target",     limit: 4
-    t.integer  "content",    limit: 4
-    t.integer  "plan",       limit: 4
-    t.integer  "express",    limit: 4
+    t.float    "target",     limit: 24
+    t.float    "content",    limit: 24
+    t.float    "plan",       limit: 24
+    t.float    "express",    limit: 24
     t.integer  "judge_id",   limit: 4
     t.integer  "player_id",  limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
-    t.integer  "total",      limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.float    "total",      limit: 24
   end
 
   add_index "grades", ["judge_id"], name: "index_grades_on_judge_id", using: :btree

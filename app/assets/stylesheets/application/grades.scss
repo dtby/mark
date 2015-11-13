@@ -7,24 +7,6 @@
 			margin-bottom: 5px;
 			font-weight: bold;
 		}
-		::-webkit-slider-runnable-track {
-			border: 1px solid $range-border;
-			background-color: $white;
-			height: 15px;
-		}
-		input[type="range"] {
-			-webkit-appearance: none;
-		}
-		input[type="range"]::-webkit-slider-thumb {
-			-webkit-appearance: none;
-			cursor: default;
-			top: -5px;
-			height: 0;
-			width: 0;
-			border-left: 8px solid transparent;
-			border-right: 8px solid transparent;
-			border-bottom: 16px solid $purple;
-		}
 	}
 }
 
@@ -40,4 +22,50 @@
 	color: $dark-purple;
 	border-radius: 8px !important;
 	padding: 5px 24px !important;
+}
+
+
+
+/** range slider style **/
+input[type="range"] {
+	-webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	border: 1px solid $range-border;
+	background-color: $white;
+	height: 15px;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
+  margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
 }
