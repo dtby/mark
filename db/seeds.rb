@@ -8,6 +8,8 @@
 Administrator.destroy_all
 Administrator.create!(id: 1, email: 'admin@mark.com', password: '000000', password_confirmation: '000000')
 
+Grade.destroy_all
+
 Player.destroy_all
 Player.create!(id: 1, number: '001', name: '单敏月', college: '上海行健职业学院', title: '学前儿童心理学', phone: '18616892097' )
 Player.create!(id: 2, number: '002', name: '石静', college: '上海农林职业技术学院', title: '国际贸易实务', phone: '13681779962' )
