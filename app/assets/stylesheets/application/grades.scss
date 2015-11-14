@@ -59,6 +59,7 @@ input[type=range]::-moz-range-thumb {
   border-radius: 3px;
   background: $light-purple;
   cursor: pointer;
+  margin-top: -4px;
 }
 
 /* All the same stuff for IE */
@@ -68,4 +69,5 @@ input[type=range]::-ms-thumb {
   border-radius: 3px;
   background: $light-purple;
   cursor: pointer;
+  margin-top: -4px;
 }
