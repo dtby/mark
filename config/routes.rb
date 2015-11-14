@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   devise_for :judges
 
   # 比赛说明页面
-  root 'home#index'
+  root 'players#index'
 
   # 参赛老师
   resources :players

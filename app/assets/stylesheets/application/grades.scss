@@ -7,16 +7,67 @@
 			margin-bottom: 5px;
 			font-weight: bold;
 		}
-		::-webkit-slider-runnable-track {
-			border: 1px solid $range-border;
-			background-color: $white;
-		}
-		::-ms-fill-lower { background: orange; }
-		::-ms-fill-upper { background: green; }
-		::-ms-thumb { background: red; }
-		::-ms-ticks-before { display: block; color: black; }
-		::-ms-ticks-after { display: block; color: blue; }
-		::-ms-track { padding: 5px; }
-		::-ms-tooltip { display: none; }
 	}
+}
+
+// 提交分数按钮
+.btn-ensure{
+	border: 1px solid $dark-purple;
+	border-radius: 8px !important;
+	padding: 5px 24px !important;
+	background-color: $purple;
+}
+.btn-cancel{
+	border: 1px solid $dark-purple;
+	color: $dark-purple;
+	border-radius: 8px !important;
+	padding: 5px 24px !important;
+}
+
+
+
+/** range slider style **/
+input[type="range"] {
+	-webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+	border: 1px solid $range-border;
+	background-color: $white;
+	height: 15px;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
+  margin-top: -4px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+
+/* All the same stuff for Firefox */
+input[type=range]::-moz-range-thumb {
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
+  margin-top: -4px;
+}
+
+/* All the same stuff for IE */
+input[type=range]::-ms-thumb {
+  height: 21px;
+  width: 25px;
+  border-radius: 3px;
+  background: $light-purple;
+  cursor: pointer;
+  margin-top: -4px;
 }

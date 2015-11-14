@@ -4,14 +4,20 @@
     <div class="modal-content">
     	<!-- modal内容 -->
     	<div class="modal-body" id="player_modal_body">
-				<div style="padding: 10px 30px;">
-					<h4>提交后则无法修改说课比赛评分，本次评分为89分，是否确认提交？</h4>
+				<div class="text-justify clearfix" style="padding-left: 20px; padding-right: 15px;">
+					<h4 style="line-height: 26px;">提交后则无法修改说课比赛评分，本次评分为<span class="red">0</span>分，是否确认提交？</h4>
 					<h4>
-						<%= link_to "确定", class: "btn btn-danger btn-xs btn-show pull-left" %>
-						<button type="button" class="btn btn-default pull-right" data-dismiss="modal">取消</button>
+						<buttom onclick="formSubmit()" class="btn btn-primary btn-ensure pull-left">确定</buttom>
+						<button type="button" class="btn btn-default btn-cancel pull-right" data-dismiss="modal">取消</button>
 					</h4>
 				</div>
     	</div>
     </div>
   </div>
 </div>
+
+<script>
+	function formSubmit(){
+		$("#new_grade").submit();
+	}
+</script>

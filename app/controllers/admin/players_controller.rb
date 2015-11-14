@@ -15,7 +15,8 @@ module Admin
     end
 
     def show
-      @players = Player.all
+      @player = Player.find(params[:id])
+      @grades = @player.grades
     end
 
     def new

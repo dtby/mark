@@ -20,14 +20,31 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <% @players.each_with_index do |player, index| %>
+                  <% @grades.each_with_index do |grade, index| %>
                     <tr>
                       <td><%= index + 1 %></td>
-                      <td><%= player.name %></td>
-                      <td>20分</td>
-                      <td>26分</td>
-                      <td>40分</td>
-                      <td>10分</td>
+                      <td><%#= grade.name %></td>
+                      <td>
+                        
+                          <%= grade.target %>分
+                      
+                      </td>
+                      <td>
+                        
+                          <%= grade.content %>分
+                      
+                      </td>
+                      <td>
+                    
+                          <%= grade.plan %>分
+                   
+                      </td>
+                      <td>
+                       
+                          <%= grade.express %>分
+                     
+                      </td>
+                      
                     </tr>
                   <% end %>
                   </tbody>
