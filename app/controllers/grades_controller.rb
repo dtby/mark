@@ -2,6 +2,7 @@ class GradesController < BaseController
 	respond_to :html, :js
 	
 	def new
+		@player = Player.find(params[:player_id])
 		@grade = Grade.new
 	end
 

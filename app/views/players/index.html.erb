@@ -4,7 +4,18 @@
 
 <%= render partial: "share/banner" %>
 
-<div class="welcome-title"><strong><%= current_judge.name %>老师，您好！</strong></div>
+<div class="welcome-title">
+	<strong><%= current_judge.name %>评委，您好！</strong>
+	<% if current_judge %>
+		<%= link_to destroy_judge_session_path, :method => :delete, class: "pull-right" do %>
+			<i class="fa fa-sign-out"></i>退出
+		<% end %>
+	<% else %>
+		<%= link_to new_judge_session_path, :method => :delete, class: "pull-right" do %>
+			<i class="fa fa-sign-out"></i>登录
+		<% end %>
+	<% end %>
+</div>
 <div class="wrap">
 	<div class="players">
 		<table class="table">
@@ -38,14 +49,7 @@
 </div>
 
 <!-- 返回上一页 -->
-<%= render partial: "share/turn_back" %>
+<%#= render partial: "share/turn_back" %>
 
 <!-- 模态框显示老师成绩 -->
 <div class="player-grade"></div>
-<script>
-	// window.onload = function(){
-	// 	var img = $(".banner").height();
-	// 	var body = document.body.clientHeight;
-	// 	$(".wrap").height(body - img);
-	// }
-</script>
