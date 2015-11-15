@@ -24,3 +24,11 @@ Player.create!(id: 10, number: '010', name: '钟燕华', college: '上海震旦�
 Player.create!(id: 11, number: '011', name: '顾佳晨', college: '上海交通职业技术学院', title: '集装箱运输实务', phone: '18501791798' )
 Player.create!(id: 12, number: '012', name: '汪晨武', college: '上海思博职业技术学院', title: '建筑CAD', phone: '15026624887' )
 Player.create!(id: 13, number: '013', name: '李博', college: '上海工会管理职业学院', title: '食品加工及质量管理', phone: '18018673963' )
+
+Judge.destroy_all
+Judge.create!(id: 1, name: '杨秀英', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 2, name: '詹昌明', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 3, name: '鞠鲁粤', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 4, name: '徐国良', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 5, name: '董奇', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 6, name: '胡颂恩', password: '000000', password_confirmation: '000000')

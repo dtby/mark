@@ -8,7 +8,7 @@ module Admin
           format.xls {
               send_data( xls_content_for(@players),
                   :type => "text/excel;charset=utf-8; header=present",
-                  :filename => "2015上海市高等职业院校教师教学信息化说课比赛成绩表" )
+                  :filename => "2015上海市高等职业院校教师教学信息化说课比赛成绩表.xls" )
           }
           format.html
       end
@@ -77,10 +77,10 @@ module Admin
           sheet1[count_row, 2] = obj.college
           sheet1[count_row, 3] = obj.title
           sheet1[count_row, 4] = obj.phone
-          sheet1[count_row, 5] = 1
-          sheet1[count_row, 6] = 2
-          sheet1[count_row, 7] = 3
-          sheet1[count_row, 8] = 4
+          sheet1[count_row, 5] = obj.grades.maximum(:total)
+          sheet1[count_row, 6] = obj.grades.minimum(:total)
+          sheet1[count_row, 7] = (obj.grades.sum(:total).to_f / obj.grades.count).round(1)
+          sheet1[count_row, 8] = obj.grades.count
           count_row += 1
       end
 
