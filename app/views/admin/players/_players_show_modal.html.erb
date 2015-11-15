@@ -24,7 +24,7 @@
                   <% @grades.each_with_index do |grade, index| %>
                     <tr>
                       <td><%= index + 1 %></td>
-                      <td><%#= grade.name %></td>
+                      <td><%= grade.judge.name %></td>
                       <td>
                         
                           <%= grade.target %>分
