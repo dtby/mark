@@ -1,3 +1,3 @@
 $(".grade-new").html("<%= escape_javascript(render partial: 'share/modal') %>");
-$(".modal-content").html("<%= escape_javascript(render partial: 'tips', locals: { title: @title }) %>");
+$(".grade-new .modal-content").html("<%= escape_javascript(render partial: 'tips', locals: { title: @title }) %>");
 $(".my-modal").modal('show');
