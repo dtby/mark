@@ -69,7 +69,7 @@ module Admin
       blue = Spreadsheet::Format.new :color => :blue, :weight => :bold, :size => 10
       sheet1.row(0).default_format = blue
 
-      sheet1.row(0).concat %w{序号 姓名 院校 说课名称 联系方式 最高分 最低风 平均分 参评人数}
+      sheet1.row(0).concat %w{序号 姓名 院校 说课名称 联系方式 最高分 最低分 平均分 参评人数}
       count_row = 1
           objs.each do |obj|
           sheet1[count_row, 0] = obj.number
