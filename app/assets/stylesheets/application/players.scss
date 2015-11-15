@@ -2,9 +2,12 @@
 .welcome-title{
 	height: 45px;
 	line-height: 45px;
-	text-align: center;
 	background-color: $welcome-title;
 	font-size: 16px;
+	padding: 0 20px;
+	a{
+		color: $dark-purple;
+	}
 }
 .players{
 	padding-top: 10px;
@@ -35,6 +38,6 @@
 	}
 }
 .player-grade{
-	width: 150px;
+	width: 170px;
 	margin: 0 auto;
 }

@@ -4,6 +4,18 @@
 
 <%= render partial: "share/banner" %>
 
+<div class="welcome-title">
+	<div style="padding: 0 20px;">
+		<table class="table text-center">
+			<tr>
+				<td style="padding: 11px 8px;"><%= "#{@player.number}号" %></td>
+				<td style="padding: 11px 8px;"><%= "#{@player.name}老师" %></td>
+				<td style="padding: 11px 8px;"><%= "《#{@player.title}》" %></td>
+			</tr>
+		</table>
+	</div>
+</div>
+
 <div class="wrap">
 	<div class="grades">
 		<%= form_for @grade do |f| %>
@@ -63,7 +75,7 @@
 </div>
 
 <!-- 返回上一页 -->
-<%= render partial: "share/turn_back" %>
+<%= render partial: "share/turn_back", locals: { url: players_path } %>
 
 <%= render partial: "grade_modal" %>
 
