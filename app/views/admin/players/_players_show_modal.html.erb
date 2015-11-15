@@ -17,6 +17,7 @@
                       <th>课程内容</th>
                       <th>教学设计</th>
                       <th>表达与教态</th>
+                      <th>总分</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -42,6 +43,10 @@
                       <td>
                        
                           <%= grade.express %>分
+                     
+                      </td>
+                      <td>
+                          <%= grade.target+grade.content+grade.plan+grade.express %>分
                      
                       </td>
                       

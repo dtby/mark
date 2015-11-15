@@ -4,14 +4,14 @@ module Admin
     respond_to :html, :js
     def index
       @players = Player.all
-      # respond_to do |format|
-      #     format.xls {
-      #         send_data( xls_content_for(@players),
-      #             :type => "text/excel;charset=utf-8; header=present",
-      #             :filename => "2015上海市高等职业院校教师教学信息化说课比赛成绩表" )
-      #     }
-      #     format.html
-      # end
+      respond_to do |format|
+          format.xls {
+              send_data( xls_content_for(@players),
+                  :type => "text/excel;charset=utf-8; header=present",
+                  :filename => "2015上海市高等职业院校教师教学信息化说课比赛成绩表" )
+          }
+          format.html
+      end
     end
 
     def show
