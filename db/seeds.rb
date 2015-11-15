@@ -26,9 +26,9 @@ Player.create!(id: 12, number: '012', name: '汪晨武', college: '上海思博�
 Player.create!(id: 13, number: '013', name: '李博', college: '上海工会管理职业学院', title: '食品加工及质量管理', phone: '18018673963' )
 
 Judge.destroy_all
-Judge.create!(id: 1, name: '杨秀英', password: '000000', password_confirmation: '000000')
-Judge.create!(id: 2, name: '詹昌明', password: '000000', password_confirmation: '000000')
-Judge.create!(id: 3, name: '鞠鲁粤', password: '000000', password_confirmation: '000000')
-Judge.create!(id: 4, name: '徐国良', password: '000000', password_confirmation: '000000')
-Judge.create!(id: 5, name: '董奇', password: '000000', password_confirmation: '000000')
-Judge.create!(id: 6, name: '胡颂恩', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 1, name: '杨秀英', email: 'yangxiuying@stiei.edu.cn', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 2, name: '詹昌明', email: 'cnaugust@163.com', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 3, name: '鞠鲁粤', email: 'lyju@shu.edu.cn', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 4, name: '徐国良', email: 'xuguoliang@shec.edu.cn', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 5, name: '董奇', email: 'dongqi945@163.com', password: '000000', password_confirmation: '000000')
+Judge.create!(id: 6, name: '胡颂恩', email: 'hse_hu@163.com', password: '000000', password_confirmation: '000000')
